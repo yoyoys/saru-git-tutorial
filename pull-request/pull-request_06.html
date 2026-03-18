@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Git, Pull Request, Code Review, Backlog" />
+    <meta
+      name="description"
+      content="建立Pull Request【教學 來使用Pull Request吧】 | 猴子老師的Git入門"
+    />
+    <title>
+      建立Pull Request【教學 來使用Pull Request吧】 | 連猴子都能懂的Git入門指南
+      | 貝格樂（Backlog）
+    </title>
+    <meta
+      property="og:title"
+      content="建立Pull Request【教學 來使用Pull Request吧】 | 連猴子都能懂的Git入門指南 | 貝格樂（Backlog）"
+    />
+    <meta property="og:type" content="article" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="../style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header" role="banner">
+        <div class="Inner">
+          <h1><a href="../">連猴子都能懂的Git入門指南</a></h1>
+          <a class="btn-contents" href="../contents/"
+            ><span>目錄</span><span class="Bg"></span
+          ></a>
+          <nav id="nav">
+            <ul class="Cf">
+              <li><a href="../intro/intro1_1.html">入門篇</a></li>
+              <li><a href="../stepup/stepup1_1.html">進階篇</a></li>
+              <li>
+                <a href="../pull-request/pull-request_01.html">Pull Request</a>
+              </li>
+              <li><a href="../reference/">Git命令快速參考</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- #header -->
+      </header>
+
+      <div id="content">
+        <div id="main" role="main">
+          <article class="Post">
+            <header class="Entry-header">
+              <p class="Category-ttl">教學 來使用Pull Request吧</p>
+              <h1 class="Entry-ttl">建立Pull Request</h1>
+              <!-- .Entry-header -->
+            </header>
+
+            <div class="Entry-content">
+              <div>
+                <div class="Change-content-area Cf">
+                  <label for="changeEnv">請選擇Backlog篇或GitHub篇</label>
+                  <select
+                    id="changeEnv"
+                    name="changeEnv"
+                    class="Change-system"
+                    onchange="switchEnv(this.value)"
+                  >
+                    <option value="backlog">選擇Backlog</option>
+                    <option value="github" selected>選擇GitHub</option>
+                  </select>
+                </div>
+                <div id="backlog" style="display: none">
+                  <div class="Mg-b60">
+                    <h2 class="heading-2">Backlog篇</h2>
+                    <p>從Git數據庫一覽中選擇目標數據庫，然後開啟分支一覽。</p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_backlog_1.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request6_backlog_1.png,
+                          ../img/post/pull-request/pull_request6_backlog_1@2x.png 2x
+                        "
+                        width="682"
+                        height="238"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                    <p>
+                      可以看到剛才建立的「add-sort-func」分支。請點擊Pull
+                      Request欄位的「追加」。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_backlog_2.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request6_backlog_2.png,
+                          ../img/post/pull-request/pull_request6_backlog_2@2x.png 2x
+                        "
+                        width="682"
+                        height="170"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                    <p>會顯示以下畫面。</p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_backlog_3.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request6_backlog_3.png,
+                          ../img/post/pull-request/pull_request6_backlog_3@2x.png 2x
+                        "
+                        width="682"
+                        height="349"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                    <ol>
+                      <li>
+                        <strong>目標分支</strong><br />要合併Pull
+                        Request的目標分支。
+                      </li>
+                      <li>
+                        <strong>Pull Request分支</strong><br />要被合併的分支。
+                      </li>
+                      <li>
+                        <strong>Pull Request負責人</strong
+                        ><br />負責審核和合併所建立的Pull Request的負責人。
+                      </li>
+                    </ol>
+                    <p>
+                      輸入適當的內容後，點擊「追加Pull Request」按鈕來建立Pull
+                      Request。建立Pull Request後，會通知Pull
+                      Request負責人和想要通知的使用者。建立後會顯示以下畫面，可以確認內容。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_backlog_4.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request6_backlog_4.png,
+                          ../img/post/pull-request/pull_request6_backlog_4@2x.png 2x
+                        "
+                        width="682"
+                        height="408"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                  </div>
+                </div>
+                <div id="github">
+                  <div class="Mg-b60">
+                    <h2 class="heading-2">GitHub篇</h2>
+                    <p>點擊目標數據庫的「Compare &amp; pull request」。</p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_github_1.png"
+                        width="580"
+                        height="265"
+                        alt=""
+                      />
+                    </p>
+                    <p>會顯示以下畫面。</p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_github_2.png"
+                        width="580"
+                        height="385"
+                        alt=""
+                      />
+                    </p>
+                    <ol>
+                      <li>
+                        <strong>目標分支</strong><br />要合併Pull
+                        Request的目標分支。
+                      </li>
+                      <li>
+                        <strong>Pull Request分支</strong><br />要被合併的分支。
+                      </li>
+                    </ol>
+                    <p>
+                      輸入適當的內容後，點擊「Create pull
+                      request」按鈕來建立Pull
+                      Request。建立後會顯示以下畫面，可以確認內容。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request6_github_3.png"
+                        width="580"
+                        height="176"
+                        alt=""
+                      />
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- .Entry-content -->
+            </div>
+
+            <footer class="Paging Cf">
+              <div class="Nav-prev">
+                <a href="./pull-request_05.html">
+                  <span class="Bg"></span>
+                  <span><b>上一頁</b></span>
+                </a>
+              </div>
+              <div class="Nav-next">
+                <a href="./pull-request_07.html">
+                  <span class="Bg"></span>
+                  <span><b>下一頁</b></span>
+                </a>
+              </div>
+              <!-- .Paging -->
+            </footer>
+          </article>
+          <!-- #main -->
+        </div>
+        <div id="sub" role="complementary">
+          <aside class="Side-menu s_sideMenu">
+            <section>
+              <h1>Pull Request</h1>
+              <ul>
+                <li>
+                  <a href="./pull-request_01.html">什麼是Pull Request？</a>
+                </li>
+                <li>
+                  <a href="./pull-request_02.html">Pull Request的優點</a>
+                </li>
+                <li>
+                  <a href="./pull-request_03.html"
+                    >使用Pull Request的開發流程</a
+                  >
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學<br />來使用Pull Request吧</h1>
+              <ul>
+                <li>
+                  <a href="./pull-request_04.html">準備範例數據庫</a>
+                </li>
+                <li><a href="./pull-request_05.html">在開發分支上修改</a></li>
+                <li>
+                  <a href="./pull-request_06.html" class="Selected"
+                    >建立Pull Request</a
+                  >
+                </li>
+                <li><a href="./pull-request_07.html">審核與合併</a></li>
+                <li><a href="./pull-request_08.html">從畫面上進行合併</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>無法合併的時候？</h1>
+              <ul>
+                <li><a href="./pull-request_09.html">衝突的產生</a></li>
+                <li><a href="./pull-request_10.html">解決衝突</a></li>
+              </ul>
+            </section>
+          </aside>
+          <!-- #sub -->
+        </div>
+        <!-- #content -->
+      </div>
+
+      <footer id="footer" role="contentinfo">
+        <div class="Row">
+          <div class="Col Right"></div>
+          <div class="Col Left">
+            <div class="Powered">
+              Powered by<br />
+              <a href="https://backlog.com/" target="_blank" title="貝格樂">
+                <img
+                  src="../img/common/logo_backlog.png"
+                  srcset="
+                    ../img/common/logo_backlog.png    1x,
+                    ../img/common/logo_backlog@2x.png 2x
+                  "
+                  width="142"
+                  height="42"
+                  alt="貝格樂 - 所有團隊成員的專案管理工具"
+              /></a>
+            </div>
+            <p class="Nulab">
+              Copyright &copy; 2004-<span class="js-copy-right">2023</span>
+              Nulab Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+        <!-- #footer -->
+      </footer>
+
+      <div class="Top-link"><a id="topLink" href="#header">UP</a></div>
+
+      <!-- #container -->
+    </div>
+    <script>
+      function switchEnv(val) {
+        ["backlog", "github"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = id === val ? "" : "none";
+        });
+
+        var sel = document.getElementById("changeEnv");
+        if (sel) sel.value = val;
+
+        try {
+          sessionStorage.setItem("selectedEnv", val);
+        } catch (e) {}
+      }
+
+      var saved = null;
+      try {
+        saved = sessionStorage.getItem("selectedEnv");
+      } catch (e) {}
+      switchEnv(saved || "github");
+    </script>
+  </body>
+</html>

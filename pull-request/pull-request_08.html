@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Git, Pull Request, Code Review, Backlog" />
+    <meta
+      name="description"
+      content="從畫面上進行合併【教學 來使用Pull Request吧】 | 猴子老師的Git入門"
+    />
+    <title>
+      從畫面上進行合併【教學 來使用Pull Request吧】 | 連猴子都能懂的Git入門指南
+      | 貝格樂（Backlog）
+    </title>
+    <meta
+      property="og:title"
+      content="從畫面上進行合併【教學 來使用Pull Request吧】 | 連猴子都能懂的Git入門指南 | 貝格樂（Backlog）"
+    />
+    <meta property="og:type" content="article" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="../style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header" role="banner">
+        <div class="Inner">
+          <h1><a href="../">連猴子都能懂的Git入門指南</a></h1>
+          <a class="btn-contents" href="../contents/"
+            ><span>目錄</span><span class="Bg"></span
+          ></a>
+          <nav id="nav">
+            <ul class="Cf">
+              <li><a href="../intro/intro1_1.html">入門篇</a></li>
+              <li><a href="../stepup/stepup1_1.html">進階篇</a></li>
+              <li>
+                <a href="../pull-request/pull-request_01.html">Pull Request</a>
+              </li>
+              <li><a href="../reference/">Git命令快速參考</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- #header -->
+      </header>
+
+      <div id="content">
+        <div id="main" role="main">
+          <article class="Post">
+            <header class="Entry-header">
+              <p class="Category-ttl">教學 來使用Pull Request吧</p>
+              <h1 class="Entry-ttl">從畫面上進行合併</h1>
+              <!-- .Entry-header -->
+            </header>
+
+            <div class="Entry-content">
+              <div>
+                <div class="Change-content-area Cf">
+                  <label for="changeEnv">請選擇Backlog篇或GitHub篇</label>
+                  <select
+                    id="changeEnv"
+                    name="changeEnv"
+                    class="Change-system"
+                    onchange="switchEnv(this.value)"
+                  >
+                    <option value="backlog">選擇Backlog</option>
+                    <option value="github" selected>選擇GitHub</option>
+                  </select>
+                </div>
+                <div id="backlog" style="display: none">
+                  <div class="Mg-b60">
+                    <h2 class="heading-2">Backlog篇</h2>
+                    <p>審核後如果沒有問題就進行合併。請點擊「合併」按鈕。</p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_backlog_1.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request8_backlog_1.png,
+                          ../img/post/pull-request/pull_request8_backlog_1@2x.png 2x
+                        "
+                        width="682"
+                        height="295"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                    <p>
+                      會顯示以下畫面。請給開發者附上適當的評論後進行合併。另外，對開發者來說被合併是一件很開心的事。請務必附上感謝的話語來留下評論。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_backlog_2.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request8_backlog_2.png,
+                          ../img/post/pull-request/pull_request8_backlog_2@2x.png 2x
+                        "
+                        width="682"
+                        height="266"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                    <p>
+                      合併後會顯示以下畫面。狀態會從 [ Open ] 變為 [ Merged
+                      ]，並且會顯示「刪除分支」按鈕。不再需要的開發分支可以從這裡刪除。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_backlog_3.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request8_backlog_3.png,
+                          ../img/post/pull-request/pull_request8_backlog_3@2x.png 2x
+                        "
+                        width="682"
+                        height="302"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                    <p>查看「網路」分頁，可以確認開發分支已經合併到主分支。</p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_backlog_4.png"
+                        srcset="
+                          ../img/post/pull-request/pull_request8_backlog_4.png,
+                          ../img/post/pull-request/pull_request8_backlog_4@2x.png 2x
+                        "
+                        width="682"
+                        height="374"
+                        alt=""
+                        class="Mg-b40"
+                      />
+                    </p>
+                  </div>
+                </div>
+                <div id="github">
+                  <div class="Mg-b60">
+                    <h2 class="heading-2">GitHub篇</h2>
+                    <p>
+                      審核後如果沒有問題就進行合併。請點擊「Conversation」分頁的「Merge
+                      pull request」按鈕。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_github_1.png"
+                        width="580"
+                        height="338"
+                        alt=""
+                      />
+                    </p>
+                    <p>
+                      會顯示以下畫面。請附上適當的評論後，點擊「Confirm
+                      merge」進行合併。另外，對開發者來說被合併是一件很開心的事。請務必附上感謝的話語來留下評論。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_github_2.png"
+                        width="580"
+                        height="203"
+                        alt=""
+                      />
+                    </p>
+                    <p>
+                      合併後會顯示以下畫面。會出現「Delete
+                      branch」按鈕。不再需要的開發分支可以從這裡刪除。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_github_3.png"
+                        width="580"
+                        height="123"
+                        alt=""
+                      />
+                    </p>
+                    <p>
+                      查看「Graphs」選單的「Network」分頁，可以確認開發分支已經合併到主分支。
+                    </p>
+                    <p>
+                      <img
+                        src="../img/post/pull-request/pull_request8_github_4.png"
+                        width="580"
+                        height="337"
+                        alt=""
+                      />
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- .Entry-content -->
+            </div>
+
+            <footer class="Paging Cf">
+              <div class="Nav-prev">
+                <a href="./pull-request_07.html">
+                  <span class="Bg"></span>
+                  <span><b>上一頁</b></span>
+                </a>
+              </div>
+              <div class="Nav-next">
+                <a href="./pull-request_09.html">
+                  <span class="Bg"></span>
+                  <span><b>下一頁</b></span>
+                </a>
+              </div>
+              <!-- .Paging -->
+            </footer>
+          </article>
+          <!-- #main -->
+        </div>
+        <div id="sub" role="complementary">
+          <aside class="Side-menu s_sideMenu">
+            <section>
+              <h1>Pull Request</h1>
+              <ul>
+                <li>
+                  <a href="./pull-request_01.html">什麼是Pull Request？</a>
+                </li>
+                <li>
+                  <a href="./pull-request_02.html">Pull Request的優點</a>
+                </li>
+                <li>
+                  <a href="./pull-request_03.html"
+                    >使用Pull Request的開發流程</a
+                  >
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學<br />來使用Pull Request吧</h1>
+              <ul>
+                <li>
+                  <a href="./pull-request_04.html">準備範例數據庫</a>
+                </li>
+                <li><a href="./pull-request_05.html">在開發分支上修改</a></li>
+                <li>
+                  <a href="./pull-request_06.html">建立Pull Request</a>
+                </li>
+                <li><a href="./pull-request_07.html">審核與合併</a></li>
+                <li>
+                  <a href="./pull-request_08.html" class="Selected"
+                    >從畫面上進行合併</a
+                  >
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h1>無法合併的時候？</h1>
+              <ul>
+                <li><a href="./pull-request_09.html">衝突的產生</a></li>
+                <li><a href="./pull-request_10.html">解決衝突</a></li>
+              </ul>
+            </section>
+          </aside>
+          <!-- #sub -->
+        </div>
+        <!-- #content -->
+      </div>
+
+      <footer id="footer" role="contentinfo">
+        <div class="Row">
+          <div class="Col Right"></div>
+          <div class="Col Left">
+            <div class="Powered">
+              Powered by<br />
+              <a href="https://backlog.com/" target="_blank" title="貝格樂">
+                <img
+                  src="../img/common/logo_backlog.png"
+                  srcset="
+                    ../img/common/logo_backlog.png    1x,
+                    ../img/common/logo_backlog@2x.png 2x
+                  "
+                  width="142"
+                  height="42"
+                  alt="貝格樂 - 所有團隊成員的專案管理工具"
+              /></a>
+            </div>
+            <p class="Nulab">
+              Copyright &copy; 2004-<span class="js-copy-right">2023</span>
+              Nulab Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+        <!-- #footer -->
+      </footer>
+
+      <div class="Top-link"><a id="topLink" href="#header">UP</a></div>
+
+      <!-- #container -->
+    </div>
+    <script>
+      function switchEnv(val) {
+        ["backlog", "github"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = id === val ? "" : "none";
+        });
+
+        var sel = document.getElementById("changeEnv");
+        if (sel) sel.value = val;
+
+        try {
+          sessionStorage.setItem("selectedEnv", val);
+        } catch (e) {}
+      }
+
+      var saved = null;
+      try {
+        saved = sessionStorage.getItem("selectedEnv");
+      } catch (e) {}
+      switchEnv(saved || "github");
+    </script>
+  </body>
+</html>

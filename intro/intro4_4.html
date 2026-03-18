@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Git, 版本控制，甘特圖，燃盡圖，專案管理，subversion,貝格樂"
+    />
+    <meta
+      name="description"
+      content="push複製的遠端數據庫【教學2 共享數據庫】  | 歡迎來到超級簡單的Git入門指南，讓我們一起學習如何使用Git版本控制系統吧！"
+    />
+    <title>
+      push複製的遠端數據庫【教學2 共享數據庫】 | 連猴子都能懂的Git入門指南 |
+      貝格樂（Backlog）
+    </title>
+    <meta
+      property="og:title"
+      content="push複製的遠端數據庫【教學2 共享數據庫】  | 連猴子都能懂的Git入門指南  | 貝格樂（Backlog）"
+    />
+    <meta
+      property="og:description"
+      content="push複製的遠端數據庫【教學2 共享數據庫】  | 歡迎來到超級簡單的Git入門指南，讓我們一起學習如何使用Git版本控制系統吧！"
+    />
+    <meta property="og:type" content="article" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="../style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header" role="banner">
+        <div class="Inner">
+          <h1><a href="../">連猴子都能懂的Git入門指南</a></h1>
+          <a class="btn-contents" href="../contents/"
+            ><span>目錄</span><span class="Bg"></span
+          ></a>
+          <nav id="nav">
+            <ul class="Cf">
+              <li>
+                <a href="../intro/intro1_1.html" class="Current">入門篇</a>
+              </li>
+              <li><a href="../stepup/stepup1_1.html">進階篇</a></li>
+              <li>
+                <a href="../pull-request/pull-request_01.html">Pull Request</a>
+              </li>
+              <li><a href="../reference/">Git命令快速參考</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- #header -->
+      </header>
+
+      <div id="content">
+        <div id="main" role="main">
+          <article class="Post">
+            <header class="Entry-header">
+              <p class="Category-ttl">教學2 共享數據庫</p>
+              <h1 class="Entry-ttl">在複製的本地端數據庫執行push</h1>
+              <p class="Description">
+                讓我們來試試看在複製的本地端數據庫執行push吧。
+              </p>
+
+              <!-- .Entry-header -->
+            </header>
+            <div class="Change-content-area Cf">
+              <label for="changeSystem">請選擇使用電腦的系統</label>
+              <select
+                id="changeSystem"
+                name="changeSystem"
+                class="Change-system"
+                onchange="switchSystem(this.value)"
+              >
+                <option value="mac">選擇Mac</option>
+                <option value="windows" selected>選擇Windows</option>
+                <option value="console">選擇主控台</option>
+              </select>
+            </div>
+            <div id="windows" class="Entry-content">
+              <h2>Windows</h2>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />首先，在上一頁複製（Clone）數據庫目錄裡的sample.txt，增加以下粗體字的部分後再提交。
+              </p>
+              <pre class="Mg-b30">連猴子都懂的Git命令
+<b>add 修改加入書籤</b></pre>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />本地端數據庫的提交已更新。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_1_win.png"
+                  alt="本地端數據庫的提交已更新。"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />接著，push以上的提交。對「tutorial2」目錄按右鍵，點一下「推送」。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_2_win.png"
+                  alt="對「tutorial2」目錄按右鍵，點一下「推送」。"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />會顯示以下畫面，點一下「確認」。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_3_win.png"
+                  alt="點一下「確認」"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />顯示以下畫面表示開始push，當執行完成了，請點擊「關閉」以結束畫面。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_4_win.png"
+                  alt="顯示以下畫面表示開始push，當執行完成了，請點擊「關閉」以結束畫面。"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />點右鍵選單的「TortoiseGit」&gt;
+                「顯示記錄」。如以下的畫面顯示「master」
+                與「origin/master」都在同ㄧ層的位置，代表遠端數據庫與本地端數據庫同步了。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_5_win.png"
+                  alt="「origin/master」的提交也前進了"
+                />
+              </p>
+              <div class="Note Mg-b60">
+                <p class="subhead">Tips</p>
+                <p>複習一下提交的位置。</p>
+                <ul>
+                  <li>
+                    <b>origin/master</b
+                    ><br />代表遠端數據庫「origin」的「master」分支位置。
+                  </li>
+                  <li>
+                    <b>origin/HEAD</b
+                    ><br />代表遠端數據庫「origin」當前提交的位置。通常和「origin/master」的位置相同。
+                  </li>
+                  <li>
+                    <b>master</b><br />代表本地端數據庫的「master」分支位置。
+                  </li>
+                </ul>
+                <p>我們將會在「進階篇」對分支做更詳細的講解。</p>
+              </div>
+              <p>
+                請打開貝格樂的Git頁面。您可以看到push內容已被添加到「最近的更新」了。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_6.png"
+                  alt="在最近的更新添加當前push的提交"
+                />
+              </p>
+              <!-- .Entry-content -->
+            </div>
+
+            <div id="mac" class="Entry-content" style="display: none">
+              <h2>Mac</h2>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />首先，在上一頁複製（Clone）數據庫目錄裡的sample.txt，增加以下粗體字的部分後再提交。
+              </p>
+              <pre class="Mg-b30">連猴子都懂的Git命令
+<b>add 修改加入書籤</b></pre>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />本地端數據庫的提交已更新。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_1_mac.png"
+                  alt="本地端數據庫的提交已更新。"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />接著，push以上的提交。點一下工具欄的「Push」。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_2_mac.png"
+                  alt="點一下工具欄的「Push」"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />當顯示以下的畫面時，請勾選「master」後點一下「OK」。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_3_mac.png"
+                  alt="當顯示以下的畫面時，請勾選「master」後點一下「OK」。"
+                />
+              </p>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />以下的畫面顯示「master」
+                與「origin/master」都在同ㄧ層的位置，代表遠端數據庫與本地端數據庫同步了。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_4_mac.png"
+                  alt="origin/master的提交也前進了"
+                />
+              </p>
+              <div class="Note Mg-b60">
+                <p class="subhead">Tips</p>
+                <p>複習一下提交的位置。</p>
+                <ul>
+                  <li>
+                    <b>origin/master</b
+                    ><br />代表遠端數據庫「origin」的「master」分支位置。
+                  </li>
+                  <li>
+                    <b>origin/HEAD</b
+                    ><br />代表遠端數據庫「origin」當前提交的位置。通常和「origin/master」的位置相同。
+                  </li>
+                  <li>
+                    <b>master</b><br />代表本地端數據庫的「master」分支位置。
+                  </li>
+                </ul>
+                <p>我們將會在「進階篇」對分支做更詳細的講解。</p>
+              </div>
+              <p>
+                請打開貝格樂的Git頁面。您可以看到push內容已被添加到「最近的更新」了。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_6.png"
+                  alt="在最近的更新添加當前push的提交"
+                />
+              </p>
+              <!-- .Entry-content -->
+            </div>
+
+            <div id="console" class="Entry-content" style="display: none">
+              <h2>主控台</h2>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />首先，在上一頁複製（Clone）數據庫目錄裡的sample.txt，增加以下粗體字的部分後再提交。
+              </p>
+              <pre class="Mg-b30">連猴子都懂的Git命令
+<b>add 修改加入書籤</b></pre>
+              <pre class="Mg-b30">$ <b>git add sample.txt</b>
+$ <b>git commit -m "添加add的說明"</b>
+[master 1ef5c8c] 添加add的說明
+ 1 files changed, 1 insertions(+), 1 deletions(-)</pre>
+              <p>
+                <span class="Tutorial2">tutorial2的操作</span
+                ><br />接下來，push這次的修改到遠端數據庫。
+              </p>
+              <p>
+                在複製的數據庫裡執行push命令時，您可以省略數據庫和分支的名稱。
+              </p>
+              <pre class="Mg-b30">$ <b>git push</b>
+Username: <b>&LT;用戶名&GT;</b>
+Password: <b>&LT;密碼&GT;</b>
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 351 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://nulab.backlog.jp/git/BLG/tutorial.git
+   486789c..1ef5c8c  master -&gt; master</pre>
+              <p>
+                請打開貝格樂的Git頁面。您可以看到push內容已被添加到「最近的更新」了。
+              </p>
+              <p class="Mg-b40">
+                <img
+                  src="../img/post/intro/capture_intro4_4_6.png"
+                  alt="在最近的更新添加當前push的提交"
+                />
+              </p>
+              <!-- .Entry-content -->
+            </div>
+
+            <footer class="Paging Cf">
+              <div class="Nav-prev">
+                <a href="../intro/intro4_3.html">
+                  <span class="Bg"></span>
+                  <span><b>上一頁</b></span>
+                </a>
+              </div>
+              <div class="Nav-next">
+                <a href="../intro/intro4_5.html">
+                  <span class="Bg"></span>
+                  <span><b>下一頁</b></span>
+                </a>
+              </div>
+              <!-- .Paging -->
+            </footer>
+          </article>
+          <!-- #main -->
+        </div>
+        <div id="sub" role="complementary">
+          <aside id="introSideMenu" class="Side-menu s_sideMenu">
+            <section>
+              <h1>Git的基本介紹</h1>
+              <ul>
+                <li><a href="./intro1_1.html">Git版本控制</a></li>
+                <li><a href="./intro1_2.html">使用數據庫管理歷史記錄</a></li>
+                <li><a href="./intro1_3.html">記錄修改的提交</a></li>
+                <li><a href="./intro1_4.html">工作目錄與索引</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學1 開始使用Git</h1>
+              <ul>
+                <li><a href="./intro2_1.html">安裝Git</a></li>
+                <li><a href="./intro2_2.html">初始設定</a></li>
+                <li><a href="./intro2_3.html">新建數據庫</a></li>
+                <li><a href="./intro2_4.html">提交檔案</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>共享數據庫</h1>
+              <ul>
+                <li><a href="./intro3_1.html">Push到遠端數據庫</a></li>
+                <li><a href="./intro3_2.html">複製遠端數據庫</a></li>
+                <li><a href="./intro3_3.html">從遠端數據庫執行Pull</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學2 共享數據庫</h1>
+              <ul>
+                <li><a href="./intro4_1.html">在貝格樂上建立遠端數據庫</a></li>
+                <li><a href="./intro4_2.html">Push到遠端數據庫</a></li>
+                <li><a href="./intro4_3.html">複製遠端數據庫</a></li>
+                <li>
+                  <a href="./intro4_4.html" class="Selected"
+                    >在複製的本地端數據庫執行push</a
+                  >
+                </li>
+                <li><a href="./intro4_5.html">從遠端數據庫執行Pull</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>合併修改記錄</h1>
+              <ul>
+                <li><a href="./intro5_1.html">合併修改記錄</a></li>
+                <li><a href="./intro5_2.html">解決衝突</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學3 合併修改記錄</h1>
+              <ul>
+                <li><a href="./intro6_1.html">製造衝突</a></li>
+                <li><a href="./intro6_2.html">解決衝突</a></li>
+              </ul>
+            </section>
+          </aside>
+          <!-- #sub -->
+        </div>
+        <!-- #content -->
+      </div>
+
+      <footer id="footer" role="contentinfo">
+        <div class="Row">
+          <div class="Col Right"></div>
+          <div class="Col Left">
+            <div class="Powered">
+              Powered by<br />
+              <a href="https://backlog.com/" target="_blank" title="貝格樂">
+                <img
+                  src="../img/common/logo_backlog.png"
+                  srcset="
+                    ../img/common/logo_backlog.png    1x,
+                    ../img/common/logo_backlog@2x.png 2x
+                  "
+                  width="142"
+                  height="42"
+                  alt="貝格樂 - 所有團隊成員的專案管理工具"
+              /></a>
+            </div>
+            <p class="Nulab">
+              Copyright &copy; 2004-<span class="js-copy-right">2023</span>
+              Nulab Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+        <!-- #footer -->
+      </footer>
+
+      <div class="Top-link"><a id="topLink" href="#header">UP</a></div>
+
+      <!-- #container -->
+    </div>
+
+    <script>
+      function switchSystem(val) {
+        ["windows", "mac", "console"].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.style.display = id === val ? "" : "none";
+        });
+
+        var sel = document.getElementById("changeSystem");
+        if (sel) sel.value = val;
+
+        try {
+          sessionStorage.setItem("selectedSystem", val);
+        } catch (e) {}
+      }
+
+      var saved = null;
+      try {
+        saved = sessionStorage.getItem("selectedSystem");
+      } catch (e) {}
+      switchSystem(saved || "windows");
+    </script>
+  </body>
+</html>

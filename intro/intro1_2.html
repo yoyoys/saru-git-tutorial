@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Git, 版本控制，甘特圖，燃盡圖，專案管理，subversion,貝格樂"
+    />
+    <meta
+      name="description"
+      content="使用數據庫管理歷史記錄【Git的基本介紹】  | 歡迎來到超級簡單的Git入門指南，讓我們一起學習如何使用Git版本控制系統吧！"
+    />
+    <title>
+      使用數據庫管理歷史記錄【Git的基本介紹】 | 連猴子都能懂的Git入門指南 |
+      貝格樂（Backlog）
+    </title>
+    <meta
+      property="og:title"
+      content="使用數據庫管理歷史記錄【Git的基本介紹】  | 連猴子都能懂的Git入門指南  | 貝格樂（Backlog）"
+    />
+    <meta
+      property="og:description"
+      content="使用數據庫管理歷史記錄【Git的基本介紹】  | 歡迎來到超級簡單的Git入門指南，讓我們一起學習如何使用Git版本控制系統吧！"
+    />
+    <meta property="og:type" content="article" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="../style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header" role="banner">
+        <div class="Inner">
+          <h1><a href="../">連猴子都能懂的Git入門指南</a></h1>
+          <a class="btn-contents" href="../contents/"
+            ><span>目錄</span><span class="Bg"></span
+          ></a>
+          <nav id="nav">
+            <ul class="Cf">
+              <li>
+                <a href="../intro/intro1_1.html" class="Current">入門篇</a>
+              </li>
+              <li><a href="../stepup/stepup1_1.html">進階篇</a></li>
+              <li>
+                <a href="../pull-request/pull-request_01.html">Pull Request</a>
+              </li>
+              <li><a href="../reference/">Git命令快速參考</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- #header -->
+      </header>
+
+      <div id="content">
+        <div id="main" role="main">
+          <article class="Post">
+            <header class="Entry-header">
+              <p class="Category-ttl">Git的基本介紹</p>
+              <h1 class="Entry-ttl">使用數據庫管理歷史記錄</h1>
+
+              <!-- .Entry-header -->
+            </header>
+
+            <div class="Entry-content">
+              <p class="Mg-b30">
+                數據庫 (Repository)
+                是記錄檔案或目錄狀態的地方，儲存內容的修改歷史記錄。在數據庫的管理下除了儲存修改歷史記錄外，還可以追蹤內容的狀態和版本喔。
+              </p>
+              <p class="Mg-b40 Text-center">
+                <img
+                  src="../img/post/intro/capture_intro1_2_1.png"
+                  alt="管理檔案或目錄的歷史記錄的數據庫"
+                />
+              </p>
+              <h2 class="Mg-b15">遠端數據庫和本地端數據庫</h2>
+              <p>首先，Git的數據庫分為遠端數據庫和本地端數據庫。</p>
+              <ul>
+                <li>
+                  遠端數據庫: 配有專用的伺服器，為了讓多人共享而建立的數據庫。
+                </li>
+                <li>
+                  本地端數據庫：為了方便用戶個人使用，在自己的機器上配置的數據庫。
+                </li>
+              </ul>
+              <p class="Mg-b30">
+                您可以在本地端數據庫上使用像是還原更改、跟踪更改等所有Git版本控制功能。<br />不過，如果想要公開在本地端數據庫的修改內容，就需要將內容上傳到遠端數據庫了。另外，透過遠端數據庫還可以取得其他人修改的內容。
+              </p>
+              <p class="Mg-b40 Text-center">
+                <img
+                  src="../img/post/intro/capture_intro1_2_2.png"
+                  alt="遠端數據庫和本地端數據庫"
+                />
+              </p>
+              <h2 class="Mg-b15">建立數據庫</h2>
+              <p>
+                建立本地端數據庫的方法有兩種：一種是重新建數據庫。另一種是複製遠端數據庫。
+              </p>
+              <p class="Mg-b40 Text-center">
+                <img
+                  src="../img/post/intro/capture_intro1_2_3.png"
+                  alt="建立數據庫的方法"
+                />
+              </p>
+              <div class="Important Mg-b60">
+                <p>下一頁將對「提交」進行說明哦。</p>
+              </div>
+              <!-- .Entry-content -->
+            </div>
+
+            <footer class="Paging Cf">
+              <div class="Nav-prev">
+                <a href="../intro/intro1_1.html">
+                  <span class="Bg"></span>
+                  <span><b>上一頁</b></span>
+                </a>
+              </div>
+              <div class="Nav-next">
+                <a href="../intro/intro1_3.html">
+                  <span class="Bg"></span>
+                  <span><b>下一頁</b></span>
+                </a>
+              </div>
+              <!-- .Paging -->
+            </footer>
+          </article>
+          <!-- #main -->
+        </div>
+        <div id="sub" role="complementary">
+          <aside id="introSideMenu" class="Side-menu s_sideMenu">
+            <section>
+              <h1>Git的基本介紹</h1>
+              <ul>
+                <li><a href="./intro1_1.html">Git版本控制</a></li>
+                <li>
+                  <a href="./intro1_2.html" class="Selected"
+                    >使用數據庫管理歷史記錄</a
+                  >
+                </li>
+                <li><a href="./intro1_3.html">記錄修改的提交</a></li>
+                <li><a href="./intro1_4.html">工作目錄與索引</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學1 開始使用Git</h1>
+              <ul>
+                <li><a href="./intro2_1.html">安裝Git</a></li>
+                <li><a href="./intro2_2.html">初始設定</a></li>
+                <li><a href="./intro2_3.html">新建數據庫</a></li>
+                <li><a href="./intro2_4.html">提交檔案</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>共享數據庫</h1>
+              <ul>
+                <li><a href="./intro3_1.html">Push到遠端數據庫</a></li>
+                <li><a href="./intro3_2.html">複製遠端數據庫</a></li>
+                <li><a href="./intro3_3.html">從遠端數據庫執行Pull</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學2 共享數據庫</h1>
+              <ul>
+                <li><a href="./intro4_1.html">在貝格樂上建立遠端數據庫</a></li>
+                <li><a href="./intro4_2.html">Push到遠端數據庫</a></li>
+                <li><a href="./intro4_3.html">複製遠端數據庫</a></li>
+                <li>
+                  <a href="./intro4_4.html">在複製的本地端數據庫執行push</a>
+                </li>
+                <li><a href="./intro4_5.html">從遠端數據庫執行Pull</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>合併修改記錄</h1>
+              <ul>
+                <li><a href="./intro5_1.html">合併修改記錄</a></li>
+                <li><a href="./intro5_2.html">解決衝突</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>教學3 合併修改記錄</h1>
+              <ul>
+                <li><a href="./intro6_1.html">製造衝突</a></li>
+                <li><a href="./intro6_2.html">解決衝突</a></li>
+              </ul>
+            </section>
+          </aside>
+          <!-- #sub -->
+        </div>
+        <!-- #content -->
+      </div>
+
+      <footer id="footer" role="contentinfo">
+        <div class="Row">
+          <div class="Col Right"></div>
+          <div class="Col Left">
+            <div class="Powered">
+              Powered by<br />
+              <a href="https://backlog.com/" target="_blank" title="貝格樂">
+                <img
+                  src="../img/common/logo_backlog.png"
+                  srcset="
+                    ../img/common/logo_backlog.png    1x,
+                    ../img/common/logo_backlog@2x.png 2x
+                  "
+                  width="142"
+                  height="42"
+                  alt="貝格樂 - 所有團隊成員的專案管理工具"
+              /></a>
+            </div>
+            <p class="Nulab">
+              Copyright &copy; 2004-<span class="js-copy-right">2023</span>
+              Nulab Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+        <!-- #footer -->
+      </footer>
+
+      <div class="Top-link"><a id="topLink" href="#header">UP</a></div>
+
+      <!-- #container -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Git, 版本控制，甘特圖，燃盡圖，專案管理，subversion,貝格樂"
+    />
+    <meta
+      name="description"
+      content="Git設定 | 歡迎來到超級簡單的Git入門指南，讓我們一起學習如何使用Git版本控制系統吧！"
+    />
+    <title>Git設定 | 連猴子都能懂的Git入門指南 | 貝格樂（Backlog）</title>
+    <meta
+      property="og:title"
+      content="Git設定 | 連猴子都能懂的Git入門指南  | 貝格樂（Backlog）"
+    />
+    <meta
+      property="og:description"
+      content="Git設定 | 歡迎來到超級簡單的Git入門指南，讓我們一起學習如何使用Git版本控制系統吧！"
+    />
+    <meta property="og:type" content="article" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="all" href="../style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="Ref">
+    <div id="container">
+      <header id="header" role="banner">
+        <div class="Inner">
+          <h1><a href="../">連猴子都能懂的Git入門指南</a></h1>
+          <a class="btn-contents" href="../contents/"
+            ><span>目錄</span><span class="Bg"></span
+          ></a>
+          <nav id="nav">
+            <ul class="Cf">
+              <li><a href="../intro/intro1_1.html">入門篇</a></li>
+              <li><a href="../stepup/stepup1_1.html">進階篇</a></li>
+              <li>
+                <a href="../pull-request/pull-request_01.html">Pull Request</a>
+              </li>
+              <li>
+                <a href="../reference/" class="Current">Git命令快速參考</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- #header -->
+      </header>
+
+      <div id="content">
+        <div id="main" role="main">
+          <ol class="Breadcrumbs">
+            <li><a href="./">Git命令快速參考 TOP</a> &gt;</li>
+            <li>Git設定</li>
+          </ol>
+          <article class="Ref-post Config">
+            <h1>Git設定</h1>
+            <ul class="Page-nav">
+              <li><a href="#sec1">設定用戶名稱/電子郵件</a></li>
+              <li><a href="#sec2">設定輸出顏色</a></li>
+              <li><a href="#sec3">設定命令的別名</a></li>
+              <li><a href="#sec4">忽略檔案使其不被管理</a></li>
+              <li><a href="#sec5">將空白目錄設定為管理對象</a></li>
+              <li><a href="#sec6">顯示設定清單</a></li>
+              <li><a href="#sec7">通過代理主機連接HTTP</a></li>
+              <li><a href="#sec8">通過需要用戶認證的代理主機連接HTTP</a></li>
+            </ul>
+            <section id="sec1" class="Item">
+              <h1>設定用戶名稱/電子郵件</h1>
+              <div class="Entry-content">
+                <pre class="Mg-b15">
+$ git config --global user.name &lt;username&gt;
+$ git config --global user.email &lt;mailaddress&gt;</pre
+                >
+                <p>不加上 --global的話，此設定只會對特定的數據庫有效。</p>
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec2" class="Item">
+              <h1>設定輸出顏色</h1>
+              <div class="Entry-content">
+                <pre>$ git config --global color.ui auto</pre>
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec3" class="Item">
+              <h1>設定命令的別名</h1>
+              <div class="Entry-content">
+                <pre>
+$ git config --global alias.&lt;aliasname&gt; &lt;commandname&gt;</pre
+                >
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec4" class="Item">
+              <h1>忽略檔案使其不被管理</h1>
+              <div class="Entry-content">
+                <pre class="Mg-b15">
+$ echo &lt;filename&gt; &gt;&gt; .gitignore</pre
+                >
+                <p>
+                  將要忽略的檔案寫入至.gitignore製作忽略檔案清單。但是
+                  .gitignore 本身是需要提交的。
+                </p>
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec5" class="Item">
+              <h1>將空白目錄設定為管理對象</h1>
+              <div class="Entry-content">
+                <pre class="Mg-b15">
+$ cd &lt;dirname&gt;
+$ touch .gitkeep</pre
+                >
+                <p>
+                  在Git，空白的目錄不是管理對象。因此您需要放一個檔案到目錄裡，任何檔案名稱都可以。<br />按照慣例使用
+                  .gitkeep 為名稱比較多。
+                </p>
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec6" class="Item">
+              <h1>顯示設定清單</h1>
+              <div class="Entry-content">
+                <pre>$ git config --global --list</pre>
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec7" class="Item">
+              <h1>通過代理主機連接HTTP</h1>
+              <div class="Entry-content">
+                <p>在 .gitconfig 檔案的http項目增加以下的設定:</p>
+                <pre class="Mg-b30">
+[http]
+proxy = &lt;代理主機的電子郵件&gt;:&lt;代理主機的端口號碼&gt;</pre
+                >
+                <p>您也可以使用​​以下config命令:</p>
+                <pre class="Mg-b30">
+$ git config --global http.proxy &lt;代理主機的電子郵件&gt;:&lt;代理主機的端口號碼&gt;</pre
+                >
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <section id="sec8" class="Item">
+              <h1>通過需要用戶認證的代理主機連接HTTP</h1>
+              <div class="Entry-content">
+                <p>在 .gitconfig 檔案的http項目增加以下的設定:</p>
+                <pre class="Mg-b30">
+[http]
+proxy = http://&lt;用戶名&gt;:&lt;密碼&gt;@&lt;代理主機的電子郵件&gt;:&lt;代理主機的端口號碼&gt;</pre
+                >
+                <p>您也可以使用​​以下config命令:</p>
+                <pre class="Mg-b30">
+$ git config --global http.proxy http://&lt;用戶名&gt;:&lt;密碼&gt;@&lt;代理主機的電子郵件&gt;:&lt;代理主機的端口號碼&gt;</pre
+                >
+              </div>
+              <a class="Up-btn" href="#">Back To Top</a>
+            </section>
+
+            <footer class="Paging">
+              <div class="Nav-prev">
+                <a href="./"
+                  ><span class="Bg"></span><span><b>返回頂部</b></span></a
+                >
+              </div>
+            </footer>
+          </article>
+          <!-- #main -->
+        </div>
+
+        <div id="sub" role="complementary">
+          <aside id="refSideMenu" class="Side-menu">
+            <ul>
+              <li><a href="./basic.html">基本操作</a></li>
+              <li><a href="./branch.html">操作分支</a></li>
+              <li><a href="./tag.html">操作標籤</a></li>
+              <li><a href="./ssh.html">設定SSH連接 </a></li>
+              <li><a href="./log.html">操作提交記錄</a></li>
+              <li><a href="./remote.html">遠端操作</a></li>
+              <li><a href="./config.html">Git設定</a></li>
+              <li><a href="./stash.html">Stash（暫存）</a></li>
+              <li><a href="./git-svn.html">Git 和 Subversion的相比</a></li>
+              <li><a href="./trouble-shooting.html">疑難排解</a></li>
+            </ul>
+          </aside>
+          <!-- #sub -->
+        </div>
+
+        <!-- #content -->
+      </div>
+
+      <footer id="footer" role="contentinfo">
+        <div class="Row">
+          <div class="Col Right"></div>
+          <div class="Col Left">
+            <div class="Powered">
+              Powered by<br />
+              <a href="https://backlog.com/" target="_blank" title="貝格樂">
+                <img
+                  src="../img/common/logo_backlog.png"
+                  srcset="
+                    ../img/common/logo_backlog.png    1x,
+                    ../img/common/logo_backlog@2x.png 2x
+                  "
+                  width="142"
+                  height="42"
+                  alt="貝格樂 - 所有團隊成員的專案管理工具"
+              /></a>
+            </div>
+            <p class="Nulab">
+              Copyright &copy; 2004-2018 Nulab Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+        <!-- #footer -->
+      </footer>
+
+      <div class="Top-link"><a id="topLink" href="#header">UP</a></div>
+
+      <!-- #container -->
+    </div>
+  </body>
+</html>
